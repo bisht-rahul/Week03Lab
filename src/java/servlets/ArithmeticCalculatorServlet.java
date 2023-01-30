@@ -33,18 +33,21 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
          if ((firstNum == null || firstNum.equals("")) && (secondNum != null || secondNum.equals("")))
                  {
                      
-                     request.setAttribute("message", "Enter Correct Number");
+                     request.setAttribute("message", "Please enter a correct number!");
                      getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
+                     
                      return;
                  }
-        try
+            try
         {
-               request.setAttribute("first", firstNum);
-               request.setAttribute("second", secondNum);
+
         
            int firstInput = Integer.parseInt(firstNum);
            int secondInput = Integer.parseInt(secondNum);
            int result = 0; 
+           
+           request.setAttribute("first", firstNum);
+           request.setAttribute("second", secondNum);
            
            if(operator.equals("+"))
            {
@@ -63,14 +66,17 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
            {
                result = firstInput % secondInput;
            }
+           
+           request.setAttribute("displayMessage", "Result is: " + result);
+           getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
         }
         
         catch(Exception e)
         {
             request.setAttribute("first", firstNum);
             request.setAttribute("second", secondNum);
-            request.setAttribute("result", "Result: invalid");
-            getServletContext().getRequestDispatcher("WEB-INF/arithmeticcalculator.jsp").forward(request, response);
+            request.setAttribute("displayMessage", "Result: invalid");
+            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
         }
     }
 

@@ -12,7 +12,7 @@
         <title>Age Calculator</title>
     </head>
     <body>
-        <h1>Age Calculator</h1>
+        <h1><mark><u>AGE CALCULATOR</u></mark></h1>
         
         <form action="age" method="POST">
             Enter Your Age: 

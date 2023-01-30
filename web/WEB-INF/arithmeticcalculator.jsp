@@ -12,9 +12,10 @@
         <title>Arithmetic Calculator</title>
     </head>
     <body>
-        <h1>Arithmetic Calculator</h1>
-         <form action="arithemetic" method="post">
-            First Number: <input type="text" name="first" value="${first}"<br>
+        <h1><mark><u>Arithmetic Calculator</u></mark></h1>
+        
+         <form action="arithmetic" method="POST">
+            First Number: <input type="text" name="first" value="${first}"><br>
             Second Number: <input type="text" name="second" value="${second}"><br>
             <input type="submit" value="+" name="operator">
             <input type="submit" value="-" name="operator">
@@ -22,7 +23,7 @@
             <input type="submit" value="%" name="operator">
         </form>
             
-        <p>${result}</p>
-        <a href = "age">Age Calculator</a>
+        <p>${displayMessage}</p>
+        <a href = "age"><h>AGE CALCULATOR</h></a>
     </body>
 </html>
